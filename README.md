@@ -2,7 +2,13 @@
 
 一个使用纯 HTML 和 CSS 编写的英文个人学术主页。无需构建工具、JavaScript、数据库、API Key 或付费服务，可直接预览，并通过 GitHub Pages 免费发布。
 
-**当前仅为本地网站，尚未创建网站仓库、推送或验证公网部署。**
+**网站已公开发布，并于 2026-10-17 核验 HTTPS 首页与样式文件均返回 HTTP 200。**
+
+- 学术主页与 OpenReview Homepage URL：[https://cxkcxk123456.github.io/](https://cxkcxk123456.github.io/)
+- 公开网站仓库：[cxkcxk123456/cxkcxk123456.github.io](https://github.com/cxkcxk123456/cxkcxk123456.github.io)
+- Pages 发布源：**Deploy from a branch → main → /(root)**，HTTPS 已启用。
+
+页面正文中的姓名、机构、身份与公开邮箱均已核对。GitHub 用户名不显示在主页正文中，但 GitHub Pages 的默认网址会包含用户名。
 
 ## 当前公开内容
 
@@ -41,7 +47,21 @@ python -m http.server 8000 --bind 127.0.0.1 --directory "D:\Adaptive-TREAD\acade
 
 发布前检查桌面和手机宽度下的布局、键盘 Tab 导航和邮箱链接，并逐项核对公开内容。
 
+## 更新现有网站
+
+本地网站已是独立 Git 仓库，`origin` 指向上述公开网站仓库。修改并预览后，在 PowerShell 使用以下命令，只提交网站文件：
+
+```powershell
+git -C "D:\Adaptive-TREAD\academic-homepage" add -- index.html style.css README.md .gitignore .nojekyll
+git -C "D:\Adaptive-TREAD\academic-homepage" commit -m "Update academic homepage"
+git -C "D:\Adaptive-TREAD\academic-homepage" push origin main
+```
+
+推送会触发 Pages 更新。等部署成功后，重新打开公开网址核对变更；不需要再次创建仓库或设置 Pages。若添加了新的公开图片或 CV 文件，请先确认隐私信息，再将具体文件名加入提交清单。
+
 ## 免费部署到 GitHub Pages
+
+首次部署已完成。以下保留 CLI 登录和 GitHub 网页部署说明，供迁移账号、换机或排障时参考。
 
 本机 Git 可用，GitHub CLI **2.102.0** 已安装在 `D:\Tools\GitHubCLI\bin\gh.exe`，并已加入当前用户 PATH。安装包已通过官方 SHA-256 校验。新打开的终端可以使用 `gh`；已有终端也可以直接使用完整路径。
 
